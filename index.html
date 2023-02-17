@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | [Blogr]</title>
+
+</head>
+<body>
+  
+  <header class="page-header | text-neutral-100 gap-top-40 ff-secondary fw-400 fs-400">
+    <div class="header-content | container-width">
+      <div class="header-nav-container">
+        <a href="./index.html"><img class="header-logo" src="./images/logo.svg" alt="blogr logo"></a>
+        <div class="header-nav">
+          <button class="mobile-nav" aria-contols="nav-container" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+          </button>
+          <nav class="nav-container" id="nav-container">
+            <ul class="nav-list | fw-600">
+              <li>
+                <div class="nav-list-content | transparent text-primary-600 ff-primary">
+                  <button class="nav-list-btn | transparent text-primary-600 ff-primary" aria-controls="subnav" aria-expanded="false">
+                    Product
+                    <picture>
+                    <source srcset="./images/icon-arrow-light.svg" media="(min-width: 50em)">
+                    <img class="nav-list-img" src="./images/icon-arrow-dark.svg" alt="navigation arrow">
+                  </picture>
+                  </button>
+                  <ul class="subnav" id="subnav">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Integrations</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="nav-list-content | transparent text-primary-600 ff-primary">
+                  <button class="nav-list-btn-second | transparent text-primary-600 ff-primary" aria-controls="subnav" aria-expanded="false">
+                    Company
+                    <picture>
+                    <source srcset="./images/icon-arrow-light.svg" media="(min-width: 50em)">
+                    <img class="nav-list-img" src="./images/icon-arrow-dark.svg" alt="navigation arrow">
+                  </picture>
+                  </button>
+                  <ul class="subnav-below" id="subnav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="nav-list-content | transparent text-primary-600 ff-primary gap-bott-20">
+                  <button class="nav-list-btn-third | transparent text-primary-600 ff-primary" aria-controls="subnav" aria-expanded="false">
+                    Connect
+                    <picture>
+                    <source srcset="./images/icon-arrow-light.svg" media="(min-width: 50em)">
+                    <img class="nav-list-img" src="./images/icon-arrow-dark.svg" alt="navigation arrow">
+                  </picture>
+                  </button>
+                  <ul class="subnav-last" id="subnav">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="subnav-group">
+              <div class="btn subnav-btn | transparent text-primary-600 ff-primary fw-600 mt-10">
+                Login
+              </div>
+              <div class="btn subnav-btn | pull-down transparent text-neutral-100 fw-500">
+                Sign Up
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="header-description | ff-primary">
+        <h1 class="page-title | gap-top-75 fs-900 fw-600">A modern publishing platform</h1>
+        <p class="fs-500 fw-400">Grow your audience and build your online brand</p>
+        <div class="button-group | ff-secondary fw-500 fs-500 gap-top-40 gap-bott-75">
+          <button class="btn btn-inverse | transparent">
+            Start for Free
+          </button>
+          <button class="btn | transparent text-neutral-100">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="ff-primary block-gap-75 text-primary-400">
+    <section class="first-section | container-width">
+      <h3 class="text-primary-500 fs-700 fw-600 block-gap-40">Designed for the future</h3>
+      <div class="first-section-container">
+        <picture class="first-section-img-container">
+          <source srcset="./images/illustration-editor-desktop.svg" media="(min-width: 50em)">
+          <img class="first-section-img | gap-bott-40" src="./images/illustration-editor-mobile.svg" alt="editor">
+        </picture>
+        <div class="first-section-content">
+          <div class="first-section-text">
+            <h4 class="content-title | text-primary-500 fs-600 fw-600 gap-bott-20">Introducing an extensible editor</h4>
+            <p class="fw-300">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+            The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+            videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+            change the looks of a blog.</p>
+          </div>
+          <div class="first-section-text">
+            <h4 class="content-title | text-primary-500 fs-600 fw-600 gap-top-40 gap-bott-20">Robust content management</h4>
+            <p class="fw-300 mb-300">Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="second-section | text-neutral-100 bg-accent-400 mt-40 mb-40">
+      <div class="second-section-container | container-width">
+        <div class="empty"></div>
+        <div class="second-section-text">
+          <h2 class="content-title | fs-800 fw-700 gap-bott-20">State of the Art Infrastructure</h2>
+          <p class="fw-300"> With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+          This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="third-section | container-width">
+      <div class="third-section-container gap-top-40">
+        <picture class="third-section-img-container">
+          <source srcset="./images/illustration-laptop-desktop.svg" media="(min-width: 50em)">
+          <img class="third-section-img | gap-bott-40" src="./images/illustration-laptop-mobile.svg" alt="editor">
+        </picture>
+        <div class="third-section-content">
+          <div class="third-section-text">
+            <h4 class="content-title | text-primary-500 fs-600 fw-600 gap-bott-20">Free, open, simple</h4>
+            <p class="fw-300">Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+            features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+            and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+          </div>
+          <div class="third-section-text">
+            <h4 class="content-title | text-primary-500 fs-600 fw-600 gap-top-40 gap-bott-20">Powerful tooling</h4>
+            <p class="fw-300">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ff-secondary text-primary-300 fs-400 bg-primary-600 block-gap-75">
+    <div class="page-footer | container-width">
+      <img src="./images/logo.svg" alt="logo image">
+      <nav class="footer-container">
+        <div class="footer-content">
+          <p class="text-neutral-100 fw-500 fs-500">Product</p>
+          <ul class="footer-subnav">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Integrations</a></li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <p class="text-neutral-100 fw-500 fs-500">Company</p>
+          <ul class="footer-subnav">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <p class="text-neutral-100 fw-500 fs-500">Connect</p>
+          <ul class="footer-subnav">
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
