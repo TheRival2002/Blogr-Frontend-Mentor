@@ -6,7 +6,7 @@
   --clr-primary-500: hsl(208, 49%, 24%);
   --clr-primary-400: hsl(207, 13%, 34%);
   --clr-primary-300: hsl(240, 2%, 79%);
-  
+
   --clr-neutral-100: hsl(0, 0%, 100%);
 
   --clr-gradient-400: hsl(13, 100%, 72%);
@@ -14,8 +14,8 @@
   --clr-gradient-600: hsl(237, 23%, 32%);
   --clr-gradient-700: hsl(237, 17%, 21%);
 
-  --ff-primary: 'Overpass', sans-serif;
-  --ff-secondary: 'Ubuntu', sans-serif;
+  --ff-primary: "Overpass", sans-serif;
+  --ff-secondary: "Ubuntu", sans-serif;
 
   --fw-300: 300;
   --fw-400: 400;
@@ -34,7 +34,9 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -46,7 +48,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
 }
 /*
@@ -61,23 +64,35 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
-
 
 /* Utility Classes */
 
@@ -202,7 +217,7 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
+  clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
 }
@@ -274,7 +289,8 @@ body {
 /* Header */
 
 .page-header {
-  background: url('./images/bg-pattern-intro-mobile.svg'), linear-gradient(135deg, var(--clr-gradient-400), var(--clr-gradient-500));
+  background: url("./images/bg-pattern-intro-mobile.svg"),
+    linear-gradient(135deg, var(--clr-gradient-400), var(--clr-gradient-500));
   background-repeat: no-repeat;
   background-position: 35% 40%;
   border-bottom-left-radius: 100px;
@@ -282,15 +298,15 @@ body {
 
 @media (max-width: 50em) {
   .header-nav-container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+  }
 }
-}
-
 
 @media (min-width: 50em) {
   .page-header {
-    background: url('./images/bg-pattern-intro-desktop.svg'), linear-gradient(135deg, var(--clr-gradient-400), var(--clr-gradient-500));
+    background: url("./images/bg-pattern-intro-desktop.svg"),
+      linear-gradient(135deg, var(--clr-gradient-400), var(--clr-gradient-500));
     background-repeat: no-repeat;
     background-position: 50% 50%;
   }
@@ -318,9 +334,19 @@ body {
 
 .btn-inverse {
   background-color: var(--clr-neutral-100);
-  color: var(--clr-accent-500); 
-  margin-right: 15px;
+  color: var(--clr-accent-500);
+  margin-right: 1rem;
   border: none;
+}
+
+@media (max-width: 30em) {
+  .button-group > * {
+    display: block;
+    margin: 0 auto;
+  }
+  .button-group > :last-child {
+    margin-top: 1rem;
+  }
 }
 
 @media (min-width: 50em) {
@@ -328,17 +354,20 @@ body {
     background-color: var(--clr-neutral-100);
     color: var(--clr-accent-500);
   }
-  
+
   .btn-inverse:hover {
     background-color: var(--clr-accent-400);
-    color: var(--clr-neutral-100); 
-    margin-right: 15px;
+    color: var(--clr-neutral-100);
     border: none;
   }
 }
 
 .header-nav-container .btn + .btn {
-  background: linear-gradient(90deg, var(--clr-gradient-400), var(--clr-gradient-500));
+  background: linear-gradient(
+    90deg,
+    var(--clr-gradient-400),
+    var(--clr-gradient-500)
+  );
   padding: 15px 35px;
   color: var(--clr-neutral-100);
 }
@@ -353,15 +382,16 @@ body {
   display: block;
   background: transparent;
   border: none;
-  background-image: url('./images/icon-hamburger.svg');
+  background-image: url("./images/icon-hamburger.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 30px;
   aspect-ratio: 1;
+  transition: background-image 200ms ease-in;
 }
 
 .mobile-nav[aria-expanded="true"] {
-  background: url('./images/icon-close.svg');
+  background: url("./images/icon-close.svg");
   background-repeat: no-repeat;
 }
 
@@ -502,7 +532,7 @@ body {
   text-align: center;
 }
 
-@media (min-width: 50em ) {
+@media (min-width: 50em) {
   .subnav-group {
     margin-right: 20px;
     display: flex;
@@ -563,7 +593,7 @@ body {
   }
   .first-section-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 75px;
     align-items: center;
     position: relative;
@@ -612,8 +642,8 @@ body {
   grid-template-rows: repeat(4, 1fr);
   position: relative;
 
-  background: url('./images/bg-pattern-circles.svg'),
-  linear-gradient(var(--clr-gradient-600), var(--clr-gradient-700));
+  background: url("./images/bg-pattern-circles.svg"),
+    linear-gradient(var(--clr-gradient-600), var(--clr-gradient-700));
   background-position: 50% 130%;
   background-repeat: no-repeat;
   border-bottom-left-radius: 100px;
@@ -629,7 +659,7 @@ body {
   width: 90vw;
   aspect-ratio: 1;
   max-height: 450px;
-  background-image: url('./images/illustration-phones.svg');
+  background-image: url("./images/illustration-phones.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -665,7 +695,7 @@ body {
   }
   .second-section-text > p {
     text-align: left;
-  } 
+  }
 }
 
 /* Third section */
@@ -685,7 +715,7 @@ body {
 @media (min-width: 50em) {
   .third-section-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 75px;
     align-items: center;
     position: relative;
