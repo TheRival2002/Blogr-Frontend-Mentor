@@ -1,36 +1,69 @@
 const mobileNav = document.querySelector(".mobile-nav");
 const primaryNav = document.querySelector(".nav-container");
-const navList = document.querySelector(".nav-list-btn");
-const navListSec = document.querySelector(".nav-list-btn-second");
-const navListThir = document.querySelector(".nav-list-btn-third");
-const subnav = document.querySelector(".subnav");
-const subnavBelow = document.querySelector(".subnav-below");
-const subnavLast = document.querySelector(".subnav-last");
+const navContent = document.querySelectorAll(".nav-list-content");
+const subnavAll = document.querySelectorAll(".subnavAll");
 
-mobileNav.addEventListener("click", function(){
-  primaryNav.hasAttribute("data-visible") 
-  ?  mobileNav.setAttribute("aria-expanded", false)
-  :  mobileNav.setAttribute("aria-expanded", true);
-  primaryNav.toggleAttribute("data-visible");
-})
+mobileNav.addEventListener("click", function () {
+  navListsVisibility(primaryNav, mobileNav);
+});
 
-navList.addEventListener("click", function(){
-  subnav.hasAttribute("data-visible")
-  ? navList.setAttribute("aria-expanded", false)
-  : navList.setAttribute("aria-expanded", true);
-  subnav.toggleAttribute("data-visible");
-})
+window.addEventListener("scroll", () => {
+  const attr = primaryNav.hasAttribute("data-visible");
+  let offset = pageYOffset;
+  if (attr && offset > 50) {
+    primaryNav.removeAttribute("data-visible");
+    mobileNav.setAttribute("aria-expanded", false);
+  }
+});
 
-navListSec.addEventListener("click", function(){
-  subnavBelow.hasAttribute("data-visible")
-  ? navListSec.setAttribute("aria-expanded", false)
-  : navListSec.setAttribute("aria-expanded", true);
-  subnavBelow.toggleAttribute("data-visible");
-})
+navContent.forEach((content) => {
+  const currSubnav = content.querySelector(".subnavAll");
+  const btn = content.querySelector("button");
+  content.addEventListener("mouseover", () => {
+    currSubnav.toggleAttribute("data-hovered", true);
+    btn.setAttribute("aria-hovered", true);
+    content.addEventListener("mouseleave", () => {
+      currSubnav.removeAttribute("data-hovered");
+      btn.setAttribute("aria-hovered", false);
+    });
+    subnavAll.forEach((el) => {
+      if (el !== currSubnav) {
+        el.removeAttribute("data-hovered");
+      }
+    });
+  });
+});
 
-navListThir.addEventListener("click", function(){
-  subnavLast.hasAttribute("data-visible")
-  ? navListThir.setAttribute("aria-expanded", false)
-  : navListThir.setAttribute("aria-expanded", true);
-  subnavLast.toggleAttribute("data-visible");
-})
+navContent.forEach((content, index) => {
+  const btn = content.querySelector("button");
+  const subnav = content.querySelector(".subnavAll");
+  const topPosition = 100 + index * 45;
+  btn.addEventListener("click", () => {
+    navListsVisibility(subnav, btn);
+    subnavPosition(subnav);
+    navContent.forEach((el) => {
+      const elBtn = el.querySelector("button");
+      const elSubnav = el.querySelector(".subnavAll");
+      if (el !== content) {
+        elBtn.removeAttribute("aria-expanded");
+        elSubnav.removeAttribute("data-visible");
+        subnavPosition(elSubnav);
+      }
+    });
+  });
+
+  function subnavPosition(subnav) {
+    if (subnav.hasAttribute("data-visible")) {
+      subnav.style.top = `${topPosition}px`;
+    } else {
+      subnav.style.top = "70px";
+    }
+  }
+});
+
+function navListsVisibility(nav, btn) {
+  nav.hasAttribute("data-visible")
+    ? btn.setAttribute("aria-expanded", false)
+    : btn.setAttribute("aria-expanded", true);
+  nav.toggleAttribute("data-visible");
+}
