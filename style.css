@@ -356,13 +356,15 @@ body {
 }
 
 @media (min-width: 50em) {
-  .btn:hover {
+  .btn:hover,
+  .btn:focus {
     background-color: var(--clr-neutral-100);
     color: var(--clr-accent-500);
     transform: scale(1.1);
   }
 
-  .btn-inverse:hover {
+  .btn-inverse:hover,
+  .btn-inverse:focus {
     background-color: var(--clr-accent-400);
     color: var(--clr-neutral-100);
     border: none;
@@ -432,11 +434,14 @@ body {
   }
 }
 
-.nav-container[data-visible] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 50em) {
+  .nav-container[data-visible] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 300ms ease;
+  }
 }
 
 .nav-list {
@@ -474,21 +479,24 @@ body {
 }
 
 .subnavAll {
-  list-style: none;
   display: none;
+  list-style: none;
   width: 75vw;
   background-color: hsl(240, 5%, 88%);
   border-radius: 5px;
 }
 
-.subnavAll[data-visible] {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  padding: 30px;
-  position: absolute;
-  z-index: 999;
+@media (max-width: 50em) {
+  .subnavAll[data-visible] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    position: absolute;
+    z-index: 999;
+    animation: fadeIn 300ms ease;
+  }
 }
 
 .subnavAll a {
@@ -504,6 +512,7 @@ body {
     display: none;
     opacity: 0;
   }
+  .nav-list-content:has(:focus) .subnavAll,
   .subnavAll[data-hovered] {
     display: flex;
     flex-direction: column;
@@ -513,6 +522,7 @@ body {
     z-index: 999;
     align-items: flex-start;
     top: 70px;
+    animation: fadeIn 400ms ease;
   }
   .subnavAll::before {
     content: "";
@@ -523,8 +533,18 @@ body {
     inset: -40px 0 0 0;
     background-color: transparent;
   }
-  .subnavAll a:hover {
+  .subnavAll a:hover,
+  .subnavAll a:focus {
     color: var(--clr-primary-600);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -548,6 +568,11 @@ body {
 
 .subnav-group {
   text-align: center;
+}
+
+.subnav-group button {
+  display: block;
+  margin-inline: auto;
 }
 
 @media (min-width: 50em) {
