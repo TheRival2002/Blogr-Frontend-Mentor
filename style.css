@@ -357,14 +357,14 @@ body {
 
 @media (min-width: 50em) {
   .btn:hover,
-  .btn:focus {
+  .btn:focus-visible {
     background-color: var(--clr-neutral-100);
     color: var(--clr-accent-500);
     transform: scale(1.1);
   }
 
   .btn-inverse:hover,
-  .btn-inverse:focus {
+  .btn-inverse:focus-visible {
     background-color: var(--clr-accent-400);
     color: var(--clr-neutral-100);
     border: none;
@@ -534,7 +534,7 @@ body {
     background-color: transparent;
   }
   .subnavAll a:hover,
-  .subnavAll a:focus {
+  .subnavAll a:focus-visible {
     color: var(--clr-primary-600);
   }
 }
@@ -861,7 +861,7 @@ footer {
   }
 
   .footer-subnav > * > *:hover::after,
-  .footer-subnav > * > *:focus::after {
+  .footer-subnav > * > *:focus-visible::after {
     transform: scaleX(1);
     transform-origin: left;
   }
